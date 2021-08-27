@@ -1,0 +1,35 @@
+{
+    "author": "Team @ts-all",
+    "bugs": {
+        "url": "https://github.com/ts-all/index/issues"
+    },
+    "description": "A set of utilities for TypeScript projects",
+    "devDependencies": {
+        "@types/node": "latest",
+        "typescript": "latest"
+    },
+    "esnext": "./dist/index.js",
+    "homepage": "https://github.com/ts-all/index#readme",
+    "keywords": [
+        "typescript",
+        "utility"
+    ],
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "name": "@ts-all/index",
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ts-all/index.git"
+    },
+    "scripts": {
+        "build": "npx tsc",
+        "deploy": "tsc && npm publish"
+    },
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "version": "0.1.0"
+}
