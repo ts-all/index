@@ -5,6 +5,7 @@
     },
     "description": "A set of utilities for TypeScript projects",
     "devDependencies": {
+        "@ts-all/eslint-config": "latest",
         "@types/node": "latest",
         "typescript": "latest"
     },
@@ -27,9 +28,10 @@
     },
     "scripts": {
         "build": "npx tsc",
-        "deploy": "tsc && npm publish"
+        "deploy": "tsc && npm publish",
+        "lint": "eslint ./ --ext .ts"
     },
     "type": "module",
     "types": "./dist/index.d.ts",
-    "version": "0.1.0"
+    "version": "0.1.1"
 }
