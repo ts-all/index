@@ -7,17 +7,18 @@
     "devDependencies": {
         "@ts-all/eslint-config": "latest",
         "@types/node": "latest",
+        "rimraf": "latest",
         "typescript": "latest"
     },
-    "esnext": "./dist/index.js",
+    "esnext": "./dist/esm/index.js",
     "homepage": "https://github.com/ts-all/index#readme",
     "keywords": [
         "typescript",
         "utility"
     ],
     "license": "MIT",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
     "name": "@ts-all/index",
     "publishConfig": {
         "access": "public"
@@ -27,11 +28,10 @@
         "url": "https://github.com/ts-all/index.git"
     },
     "scripts": {
-        "build": "npx tsc",
-        "deploy": "tsc && npm publish",
+        "build": "rimraf ./dist && tsc -p ./tsconfig.esm.json && tsc -p ./tsconfig.cjs.json",
+        "deploy": "npm run build && npm publish",
         "lint": "eslint ./src --ext .ts"
     },
-    "type": "module",
-    "types": "./dist/index.d.ts",
-    "version": "0.1.5"
+    "types": "./dist/esm/index.d.ts",
+    "version": "0.2.0"
 }
