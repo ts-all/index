@@ -33,5 +33,5 @@
         "lint": "eslint ./src --ext .ts"
     },
     "types": "./dist/esm/index.d.ts",
-    "version": "0.2.0"
+    "version": "0.2.1"
 }

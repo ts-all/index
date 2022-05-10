@@ -12,14 +12,14 @@ export function getEnvConfig(envConfig: Record<string, any>, continueOnEmpty: bo
             if (printTemplate) {
                 const hasValue: boolean = Boolean((envConfig)[key]);
                 if (hasValue) {
-                    console.info(`T_${envKeyName}="${(envConfig)[key] as string}"`);
+                    console.info(`Z_${envKeyName}="${(envConfig)[key] as string}"`);
                 } else {
                     console.info(`${envKeyName}=""`);
                 }
             }
 
             if (Reflect.has(process.env, envKeyName)) {
-                console.info(process.env[envKeyName], envKeyName);
+                console.info(envKeyName, process.env[envKeyName]);
                 if (typeof (envConfig)[key] == 'string') {
                     (envConfig)[key] = (process.env[envKeyName] ?? (envConfig)[key]) || '';
                 } else if (typeof (envConfig)[key] == 'number') {
