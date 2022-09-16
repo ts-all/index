@@ -1,7 +1,11 @@
 .editorconfig
 .eslintrc.json
+.vscode
+jest.config.ts
 node_modules
 src
+tests
 tsconfig.cjs.json
+tsconfig.debug.json
 tsconfig.esm.json
 tsconfig.json

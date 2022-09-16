@@ -15,6 +15,6 @@ console.log(getRandomNum(9, 99));
 ```
 
 ```shell
-# add the flag to make node find the esmodules
+# add the flag to make node to find the esmodules
 $ node --es-module-specifier-resolution=node ./dist/app.js
 ```

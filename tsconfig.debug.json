@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/debug",
+        "sourceMap": true
+    },
+    "exclude": [
+        "jest.config.ts",
+        "tests/**/*"
+    ],
+    "extends": "./tsconfig.esm.json",
+    "include": [
+        "src/**/*.ts"
+    ]
+}
