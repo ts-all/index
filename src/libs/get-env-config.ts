@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-explicit-any */
 import { constantCase } from './constant-case';
 
-export function getEnvConfig(envConfig: Record<string, any>, continueOnEmpty: boolean = false, printTemplate: boolean = false): void {
+export function getEnvConfig(envConfig: Record<string, unknown>, continueOnEmpty: boolean = false, printTemplate: boolean = false): void {
     if (!process.release.name) {
         return;
     }
