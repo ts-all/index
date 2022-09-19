@@ -1,7 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function jsonTryParse<T>(text: string, reviver?: (key: any, value: any) => any): T | null {
+export function jsonTryParse<T>(...args: Parameters<typeof JSON.parse>): T | null {
     try {
-        return JSON.parse(text, reviver) as T;
+        return JSON.parse(args[0], args[1]) as T;
     } catch {
         return null;
     }
