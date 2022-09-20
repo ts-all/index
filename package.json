@@ -35,7 +35,7 @@
         "build": "jest && rimraf ./dist && tsc -p ./tsconfig.esm.json && tsc -p ./tsconfig.cjs.json",
         "debug": "tsc -p ./tsconfig.debug.json && node --require=esm ./dist/debug/app",
         "deploy": "npm run build && npm publish",
-        "lint": "eslint ./src --ext .ts",
+        "lint": "eslint --ext .ts ./src ./tests",
         "test": "jest"
     },
     "types": "./dist/esm/index.d.ts",
