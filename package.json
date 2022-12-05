@@ -6,7 +6,6 @@
     "description": "A set of utilities for TypeScript projects",
     "devDependencies": {
         "@ts-all/eslint-config": "^0.1.12",
-        "@types/node": "^18.11.9",
         "esm": "^3.2.25",
         "jest": "^29.3.1",
         "rimraf": "^3.0.2",
@@ -39,5 +38,5 @@
         "test": "jest"
     },
     "types": "./dist/esm/index.d.ts",
-    "version": "0.2.6"
+    "version": "0.2.8"
 }
