@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument,@typescript-eslint/strict-boolean-expressions,@typescript-eslint/no-unsafe-assignment,@typescript-eslint/typedef,@typescript-eslint/no-dynamic-delete,@typescript-eslint/no-explicit-any */
 export function truthify(obj: Record<string, any>, opt?: { zero?: boolean; array?: boolean }): void {
+    if (typeof obj != 'object') { return; }
+
     for (const key in obj) {
         if (Reflect.has(obj, key)) {
             const ele = obj[key];
