@@ -12,3 +12,12 @@ export function roundDigits(num: number, digits: number): number {
     const factor: number = 10 ** digitsRound;
     return Math.round(num * factor) / factor;
 }
+
+export function offRound(value: number, digits: number = 9): number {
+    if (typeof value != 'number') { return value; }
+    let fixedDigits: number = Math.floor(digits);
+    if (typeof fixedDigits != 'number' || !Number.isInteger(fixedDigits) || fixedDigits < 0 || fixedDigits > 20) {
+        fixedDigits = 9;
+    }
+    return roundDigits(value, fixedDigits) || value;
+}

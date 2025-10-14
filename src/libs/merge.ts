@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-assignment */
 
-function isPlainObject(input: any): input is Record<string, any> {
-    return input && typeof input === 'object' && !Array.isArray(input);
+function isPlainObject(input: unknown): input is Record<string, any> {
+    return typeof input === 'object' && !Array.isArray(input) && Boolean(input);
 }
 
 function clone<T>(input: T): T {
@@ -57,13 +57,17 @@ function mergeFun(isClone: boolean, isRecursive: boolean, items: Array<any>): an
 }
 
 export function merge(isClone: boolean, ...items: Array<any>): any;
+// eslint-disable-next-line no-redeclare
 export function merge(...items: Array<any>): any;
+// eslint-disable-next-line no-redeclare
 export function merge(...items: Array<any>): any {
     return mergeFun(items[0] === true, false, items);
 }
 
 export function recursive(isClone: boolean, ...items: Array<any>): any;
+// eslint-disable-next-line no-redeclare
 export function recursive(...items: Array<any>): any;
+// eslint-disable-next-line no-redeclare
 export function recursive(...items: Array<any>): any {
     return mergeFun(items[0] === true, true, items);
 }

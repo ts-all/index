@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/lint",
+        "sourceMap": true
+    },
+    "exclude": [],
+    "extends": "./tsconfig.esm.json",
+    "include": [
+        "**/*.ts"
+    ]
+}

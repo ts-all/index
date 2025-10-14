@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import { Config } from 'jest';
+import type { Config } from 'jest';
 
 const config: Config = {
     /*
@@ -302,5 +302,4 @@ const config: Config = {
      */
 };
 
-// eslint-disable-next-line import/no-default-export
 export default config;

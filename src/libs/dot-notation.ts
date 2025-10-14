@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-namespace,no-inner-declarations */
+/* eslint-disable @typescript-eslint/no-namespace */
 export namespace dotNotation {
 
-    const propsBlackList: Set<string> = new Set(['__proto__', 'prototype', 'constructor']);
+    const propsBlackList: Set<string> = new Set<string>(['__proto__', 'prototype', 'constructor']);
 
     function isObject(obj: unknown): boolean {
         if (typeof obj !== 'object') { return false; }
@@ -71,6 +71,7 @@ export namespace dotNotation {
 
             currentValue = (Array.isArray(currentValue) && !/^[0-9]+$/u.test(key) ? extractArrayValue(currentValue, key) : currentValue[key]) as Record<string, unknown>;
 
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
             if (typeof currentValue === 'undefined' || currentValue === null) {
                 break;
             }
