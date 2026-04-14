@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { roundDigits } from '../src/libs/round-digits';
+import { roundDigits, truncDigits } from '../src/libs/round-digits';
 
 describe('roundDigits', () => {
     test('roundDigits(12.636, 0.5)', () => {
@@ -72,5 +72,9 @@ describe('roundDigits', () => {
 
     test('roundDigits(undefined, undefined)', () => {
         expect(roundDigits(undefined as unknown as number, undefined as unknown as number)).toBe(undefined);
+    });
+
+    test('truncDigits(12.636, 2)', () => {
+        expect(truncDigits(12.636, 2)).toBe(12.63);
     });
 });
