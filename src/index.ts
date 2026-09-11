@@ -2,6 +2,7 @@ export * from './libs/blob-to-dataurl';
 export * from './libs/constant-case';
 export * from './libs/dot-notation';
 export * from './libs/download-blob';
+export * from './libs/enums';
 export * from './libs/get-env-config';
 export * from './libs/get-random';
 export * from './libs/json-try-parse';

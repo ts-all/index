@@ -10,7 +10,6 @@
             "DOM",
             "ESNext"
         ],
-        // Environment Settings
         "module": "preserve",
         "moduleDetection": "force",
         "moduleResolution": "bundler",
@@ -22,8 +21,6 @@
         "noUncheckedSideEffectImports": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        // File Layout
-        // "rootDir": "./src",
         "outDir": "./dist/out-tsc",
         "skipLibCheck": true,
         "sourceMap": false,
