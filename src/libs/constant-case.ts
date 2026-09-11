@@ -1,4 +1,4 @@
-export function constantCase(value: string): string {
+export function constantCase(value?: string): string {
     if (typeof value != 'string') {
         return '';
     }

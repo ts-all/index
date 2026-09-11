@@ -1,11 +1,37 @@
 {
-    "files": [],
-    "references": [
-        {
-            "path": "./tsconfig.esm.json"
-        },
-        {
-            "path": "./tsconfig.cjs.json"
-        }
-    ]
+    // Visit https://aka.ms/tsconfig to read more about this file
+    "compilerOptions": {
+        "declaration": false,
+        "declarationMap": false,
+        "esModuleInterop": true,
+        "exactOptionalPropertyTypes": true,
+        "isolatedModules": true,
+        "lib": [
+            "DOM",
+            "ESNext"
+        ],
+        // Environment Settings
+        "module": "preserve",
+        "moduleDetection": "force",
+        "moduleResolution": "bundler",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUncheckedSideEffectImports": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        // File Layout
+        // "rootDir": "./src",
+        "outDir": "./dist/out-tsc",
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "strict": true,
+        "target": "esnext",
+        "types": [
+            "node"
+        ],
+        "verbatimModuleSyntax": true
+    }
 }

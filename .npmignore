@@ -1,11 +1,16 @@
 .editorconfig
 .eslintrc.json
 .vscode
+dist/coverage
+dist/out-test
+dist/out-tsc
+eslint.config.mjs
 jest.config.ts
 node_modules
 src
 tests
 tsconfig.cjs.json
-tsconfig.debug.json
 tsconfig.esm.json
 tsconfig.json
+tsconfig.test.json
+tsconfig.types.json

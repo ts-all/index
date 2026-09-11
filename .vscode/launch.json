@@ -6,14 +6,12 @@
         {
             "name": "Launch Program",
             "outFiles": [
-                "${workspaceFolder}/dist/debug/**/*.js"
+                "${workspaceFolder}/dist/out-tsc/**/*.js"
             ],
-            "preLaunchTask": "tsc: build - tsconfig.debug.json",
+            "preLaunchTask": "tsc: build - tsconfig.json",
             "program": "${workspaceFolder}/src/app.ts",
             "request": "launch",
-            "runtimeArgs": [
-                "--require=esm"
-            ],
+            "runtimeArgs": [],
             "skipFiles": [
                 "<node_internals>/**"
             ],

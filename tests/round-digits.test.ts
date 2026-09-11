@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { roundDigits, truncDigits } from '../src/libs/round-digits';
+import { offRound, roundDigits, truncDigits } from '../src/libs/round-digits';
 
 describe('roundDigits', () => {
     test('roundDigits(12.636, 0.5)', () => {
@@ -74,7 +74,35 @@ describe('roundDigits', () => {
         expect(roundDigits(undefined as unknown as number, undefined as unknown as number)).toBe(undefined);
     });
 
+    test('offRound(12.636000000000001)', () => {
+        expect(offRound(12.636000000000001)).toBe(12.636);
+    });
+
     test('truncDigits(12.636, 2)', () => {
         expect(truncDigits(12.636, 2)).toBe(12.63);
+    });
+
+    test('truncDigits(12.636, -1)', () => {
+        expect(truncDigits(12.636, -1)).toBe(12.636);
+    });
+
+    test('truncDigits(12.636, 0)', () => {
+        expect(truncDigits(12.636, 0)).toBe(12);
+    });
+
+    test('truncDigits(12.636, NaN)', () => {
+        expect(truncDigits(12.636, NaN)).toBe(12.636);
+    });
+
+    test('truncDigits(Number.POSITIVE_INFINITY, 2)', () => {
+        expect(truncDigits(Number.POSITIVE_INFINITY, 2)).toBe(Number.POSITIVE_INFINITY);
+    });
+
+    test('truncDigits(12.636, Number.POSITIVE_INFINITY)', () => {
+        expect(truncDigits(12.636, Number.POSITIVE_INFINITY)).toBe(12.636);
+    });
+
+    test('truncDigits(NaN, 2)', () => {
+        expect(truncDigits(NaN, 2)).toBe(NaN);
     });
 });

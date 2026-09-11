@@ -29,9 +29,15 @@ export function truncDigits(num: number, digits: number): number {
     if (Number.isNaN(num) || !Number.isFinite(num) || Number.isNaN(digits) || !Number.isFinite(digits)) {
         return num;
     }
-    if (digits <= 0) {
+
+    if (digits < 0) {
         return num;
     }
+
+    if (digits == 0) {
+        return Math.trunc(num);
+    }
+
     const digitCount: number = Math.round(digits);
     const factor: number = 10 ** digitCount;
     return Math.trunc(num * factor) / factor;

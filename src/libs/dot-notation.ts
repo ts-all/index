@@ -92,7 +92,11 @@ export namespace dotNotation {
         }
 
         for (let i: number = 0; i < segs.length; i++) {
-            const key: string = segs[i];
+            const key: string | undefined = segs[i];
+
+            if (!key) {
+                continue;
+            }
 
             if (i == segs.length - 1) {
                 (obj as Record<string, unknown>)[key] = value;

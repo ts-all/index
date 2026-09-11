@@ -13,8 +13,3 @@ import { getRandomNum } from '@ts-all/index';
 // outputs a random number in range of 9~99
 console.log(getRandomNum(9, 99));
 ```
-
-```shell
-# add the flag to make node to find the esmodules
-$ node --es-module-specifier-resolution=node ./dist/app.js
-```
