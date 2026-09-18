@@ -11,7 +11,7 @@
     "description": "A set of utilities for TypeScript projects",
     "devDependencies": {
         "@ts-all/eslint-config": "^0.3.12",
-        "@types/node": "^26.5.1",
+        "@types/node": "^26.6.1",
         "@typescript/native": "npm:typescript@^7.0.2",
         "jest": "^30.5.1",
         "rimraf": "^6.1.3",
@@ -20,14 +20,6 @@
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "esnext": "./dist/esm/index.js",
-    "exports": {
-        ".": {
-            "default": "./dist/esm/index.js",
-            "import": "./dist/esm/index.js",
-            "require": "./dist/cjs/index.cjs",
-            "types": "./dist/esm/index.d.ts"
-        }
-    },
     "homepage": "https://github.com/ts-all/index#readme",
     "keywords": [
         "typescript",
@@ -51,7 +43,6 @@
         "lint": "tsc && eslint --concurrency auto",
         "test": "jest"
     },
-    "type": "module",
     "types": "./dist/esm/index.d.ts",
-    "version": "0.3.0"
+    "version": "0.3.1"
 }
