@@ -11,23 +11,25 @@
     "description": "A set of utilities for TypeScript projects",
     "devDependencies": {
         "@ts-all/eslint-config": "^0.3.12",
-        "@types/node": "^26.6.1",
+        "@types/node": "^26.6.2",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "jest": "^30.5.1",
+        "jest": "^30.5.2",
         "rimraf": "^6.1.3",
         "ts-jest": "^29.4.12",
-        "tsx": "^4.23.13",
+        "tsx": "^4.23.15",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
-    "esnext": "./dist/esm/index.js",
+    "exports": {
+        "import": "./dist/esm/index.js",
+        "require": "./dist/cjs/index.js",
+        "types": "./dist/types/index.d.ts"
+    },
     "homepage": "https://github.com/ts-all/index#readme",
     "keywords": [
         "typescript",
         "utility"
     ],
     "license": "MIT",
-    "main": "./dist/cjs/index.js",
-    "module": "./dist/esm/index.js",
     "name": "@ts-all/index",
     "publishConfig": {
         "access": "public"
@@ -37,12 +39,11 @@
         "url": "https://github.com/ts-all/index.git"
     },
     "scripts": {
-        "build": "jest && rimraf ./dist && tsc -p ./tsconfig.cjs.json && tsc -p ./tsconfig.esm.json",
+        "build": "jest && rimraf ./dist && tsc -p ./tsconfig.cjs.json && tsc -p ./tsconfig.esm.json && tsc -p ./tsconfig.types.json",
         "debug": "tsx ./src/app",
         "deploy": "npm run build && npm publish",
         "lint": "tsc && eslint --concurrency auto",
         "test": "jest"
     },
-    "types": "./dist/esm/index.d.ts",
-    "version": "0.3.1"
+    "version": "0.3.2"
 }
