@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { enumNumberEntries, enumStringEntries } from '../src/libs/enums';
+import { enumNumberEntries, enumStringEntries, getStringEnumKey } from '../src/libs/enums';
 
 enum NumEnum {
     a = 1,
@@ -39,5 +39,17 @@ describe('enums', () => {
 
     test('enumStringEntries(NumEnum)', () => {
         expect(enumStringEntries(NumEnum)).toEqual([]);
+    });
+
+    test('getStringEnumKey', () => {
+        expect(getStringEnumKey(StrEnum, 'v1')).toEqual('k1');
+    });
+
+    test('getStringEnumKey', () => {
+        expect(getStringEnumKey(StrEnum, 'c1')).toEqual(null);
+    });
+
+    test('getStringEnumKey', () => {
+        expect(getStringEnumKey(StrEnum, '')).toEqual(null);
     });
 });

@@ -5,5 +5,10 @@ export function enumNumberEntries(enumObj: EnumBase): Array<[string, number]> {
 }
 
 export function enumStringEntries(enumObj: EnumBase): Array<[string, string]> {
-    return Object.entries(enumObj).filter((i): i is [string, string] => i[0] != 'NaN' && Number.isNaN(Number(i[0])) && typeof i[1] == 'string' && i[1].length > 0).map(([key, value]) => [key, value]);
+    return Object.entries(enumObj).filter((i): i is [string, string] => i[0] != 'NaN' && Number.isNaN(Number(i[0])) && typeof i[1] == 'string' && i[1].length > 0);
+}
+
+export function getStringEnumKey(enumObj: EnumBase, value: string): string | null {
+    if (!value) { return null; }
+    return enumStringEntries(enumObj).find(i => i[1] == value)?.[0] ?? null;
 }
