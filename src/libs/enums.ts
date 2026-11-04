@@ -9,6 +9,5 @@ export function enumStringEntries(enumObj: EnumBase): Array<[string, string]> {
 }
 
 export function getStringEnumKey(enumObj: EnumBase, value: string): string | null {
-    if (!value) { return null; }
-    return enumStringEntries(enumObj).find(i => i[1] == value)?.[0] ?? null;
+    return value ? enumStringEntries(enumObj).find(i => i[1] == value)?.[0] ?? null : null;
 }

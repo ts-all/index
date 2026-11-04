@@ -19,7 +19,7 @@ export async function selectFile(accept?: string, multiple?: true): Promise<File
         });
 
         fileSelector.addEventListener('change', () => {
-            if (fileSelector.files == null) {
+            if (fileSelector.files === null) {
                 resolve(null);
                 return;
             }
@@ -28,11 +28,7 @@ export async function selectFile(accept?: string, multiple?: true): Promise<File
                 resolve(null);
                 return;
             }
-            if (multiple) {
-                resolve(fileList);
-            } else {
-                resolve(fileList[0] || null);
-            }
+            resolve(multiple ? fileList : fileList[0] || null);
         });
 
         fileSelector.click();

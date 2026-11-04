@@ -14,11 +14,7 @@ export namespace dotNotation {
             .split(/[.]|(?:\[(?<forArray>\d|\*)\])/u)
             .filter(item => Boolean(item));
 
-        if (parts.some(i => propsBlackList.has(i))) {
-            return [];
-        }
-
-        return parts;
+        return parts.some(i => propsBlackList.has(i)) ? [] : parts;
     }
 
     function extractArrayValue(arr: Array<unknown>, key: string): Array<unknown> {

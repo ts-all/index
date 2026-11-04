@@ -1,6 +1,5 @@
 export function isStringAndLengthy(value: unknown): value is string {
-    if (typeof value != 'string') { return false; }
-    return value.length > 0;
+    return typeof value == 'string' && value.length > 0;
 }
 
 export function isArrayAndLengthy<T>(value?: unknown): value is Array<T> {

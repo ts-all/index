@@ -12,11 +12,7 @@ export function getEnvConfig(envConfig: EnvConfigBase, continueOnEmpty: boolean 
 
             if (printTemplate) {
                 const hasValue: boolean = Boolean(envConfig[key]);
-                if (hasValue) {
-                    console.info(`Z_${envKeyName}="${envConfig[key] as string}"`);
-                } else {
-                    console.info(`${envKeyName}=""`);
-                }
+                console.info(hasValue ? `Z_${envKeyName}="${envConfig[key] as string}"` : `${envKeyName}=""`);
             }
 
             if (Reflect.has(process.env, envKeyName)) {

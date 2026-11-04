@@ -3,11 +3,7 @@ export async function blobToDataUrl(blob: Blob): Promise<string | null> {
         const reader: FileReader = new FileReader();
         reader.onload = () => {
             const { result } = reader;
-            if (typeof result == 'string') {
-                resolve(result);
-            } else {
-                resolve(null);
-            }
+            resolve(typeof result == 'string' ? result : null);
         };
         reader.onerror = () => resolve(null);
         reader.readAsDataURL(blob);
