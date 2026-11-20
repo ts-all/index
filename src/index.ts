@@ -1,5 +1,6 @@
 export * from './libs/blob-to-dataurl';
 export * from './libs/constant-case';
+export * from './libs/crc16';
 export * from './libs/date-utils';
 export * from './libs/dot-notation';
 export * from './libs/download-blob';
